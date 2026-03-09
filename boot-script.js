@@ -9,8 +9,8 @@
   const bootLines = [
     { text: '', delay: 300 },
     { text: '╔══════════════════════════════════════╗', delay: 40 },
-    { text: '║         ArCh  SYSTEM  BIOS           ║', delay: 40 },
-    { text: '║         v1.0.25  [ARM Cortex]         ║', delay: 40 },
+    { text: '║         BooT  SYSTEM  BIOS            ║', delay: 40 },
+    { text: '║         v1.0.25  [Main screen]        ║', delay: 40 },
     { text: '╚══════════════════════════════════════╝', delay: 200 },
     { text: '', delay: 100 },
     { text: '[BOOT]  Power-On Reset detected', delay: 80 },
@@ -44,11 +44,11 @@
     { text: '[SYS ]  Entering main() ...', delay: 300 },
     { text: '', delay: 100 },
     { text: '  ┌─────────────────────────────────┐', delay: 40 },
-    { text: '  │   ArCh — Embedded Engineer       │', delay: 40 },
+    { text: '  │   AVIATOR —Aerospace Engineer    │', delay: 40 },
     { text: '  │   Systems. Signals. Software.    │', delay: 40 },
     { text: '  └─────────────────────────────────┘', delay: 400 },
     { text: '', delay: 200 },
-    { text: '[RDY ]  System online. Welcome.', delay: 500 },
+    { text: '[ready... ]  System online. Welcome...', delay: 500 },
   ];
 
   // ── DOM refs ──
@@ -117,10 +117,6 @@
 
   // ── Trace routing ──
   // Connects MCU edges to peripheral edges with right-angle PCB-style traces.
-  //
-  // Peripheral positions are computed from their CSS values directly,
-  // so traces are immune to scale() transforms during animation.
-  //
   // CSS positions (mirrored here):
   //   portfolio: top:14%, left:50%, translate:-50% 0  → connects to MCU top
   //   github:    top:50%, right:8%, translate:0 -50%  → connects to MCU right

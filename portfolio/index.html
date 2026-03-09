@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jackson Ojwang | Systems & Aerospace</title>
+    <title>Jackson Ojwang | Software & Aerospace</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
                     <span>102.0</span>
                 </div>
             </div>
-            <div class="skip-btn" id="skip-preloader">Click to Skip Sequence [Esc]</div>
+            <div class="skip-btn" id="skip-preloader">Click [Esc] to Skip Sequence </div>
         </div>
     </div>
 
@@ -47,7 +47,7 @@
 
     <header class="hud-nav">
         <div class="logo">
-            <a href="#home">SYS.<span class="text-green">OJWANG</span></a>
+            <a href="#home">Aero.<span class="text-green">OJWANG</span></a>
         </div>
         <div class="hamburger">
             <div class="line1"></div>
@@ -56,62 +56,82 @@
         </div>
         <ul class="nav-links">
             <li><a href="#about">01.ABOUT</a></li>
-            <li><a href="#projects">02.LEDGER</a></li>
-            <li><a href="#contact">03.COMMS</a></li>
+            <li><a href="#projects">02.PROJECTS</a></li>
+            <li><a href="#contact">03.CONTACT</a></li>
         </ul>
     </header>
 
     <main>
         <section id="home" class="hud-section hud-hero">
             <div class="hero-content hidden-scroll">
-                <div class="tech-status">
-                    <span class="status-dot"></span> UPLINK ESTABLISHED. NODE ACTIVE._
-                </div>
-                
-                <h1>JACKSON <span class="text-blue">OJWANG</span></h1>
-                <h2>Aerospace Engineering | Software Developer</h2>
-                
-                <div class="bio-text">
-                    <p>
-                        Building precise systems at the intersection of hardware, aerodynamics, and software. 
-                        I combine a rigorous foundation in physics with the ability to build automated, data-driven software systems.
-                    </p>
-                </div>
+                <div class="hero-text-column">
+                    <div class="tech-status">
+                        <span class="status-dot"></span> UPLINK ESTABLISHED. NODE ACTIVE._
+                    </div>
+                    
+                    <h1>JACKSON <span class="text-blue">OJWANG</span></h1>
+                    <h2>Aerospace Engineer | Software Developer</h2>
+                    
+                    <div class="bio-text">
+                        <p>
+                            Building precise systems at the intersection of hardware, aerodynamics, and software. 
+                            I combine a rigorous foundation in physics with the ability to build automated, data-driven software systems.
+                        </p>
+                    </div>
 
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">ACCESS LEDGER</a>
-                    <a href="#contact" class="btn-outline">INITIATE COMMS</a>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">ACCESS PROJECTS</a>
+                        <a href="#contact" class="btn-outline">CONTACT ME</a>
+                    </div>
+                </div>
+                <div class="hero-visual-column">
+                    <div class="hud-video-wrapper">
+                        <video class="floating-video" autoplay loop muted playsinline>
+                            <source src="../images/floating.mp4" type="video/mp4">
+                            Your browser does not support video tag.
+                        </video>
+                    </div>
                 </div>
             </div>
         </section>
 
+                    <!--About section-->
         <section id="about" class="hud-section">
             <div class="section-header hidden-scroll">
                 <span class="tech-tag">DATABLOCK // 01</span>
                 <h2>Systems & Operations</h2>
             </div>
             <div class="about-grid hidden-scroll">
-                <p class="lead-text">
-                    Currently pushing limits in Aerospace Engineering at Kenyatta University, with a deep focus on rotary-wing aeromechanics and autonomous flight control. 
-                    I approach engineering with a disciplined, builder's mindset—whether calculating structural safety margins for drone payloads or architecting Python trading environments.
-                </p>
+                
+                <div class="profile-wrapper">
+                    <img src="../images/Jack.jpg" alt="Portrait of Jackson" class="profile-img">
+                    <div class="hud-crosshairs"></div>
+                </div>
+
+                <div class="about-text">
+                    <p class="lead-text">
+                        Currently pushing limits in Aerospace Engineering at Kenyatta University, with a deep focus on rotary-wing aeromechanics and autonomous flight control. 
+                        I approach engineering with a disciplined, builder's mindset—whether calculating structural safety margins for drone payloads or architecting Python trading environments.
+                    </p>
+                </div>
+
                 <div class="metrics-box">
                     <div class="metric">
-                        <span class="metric-val text-green">YYAS</span>
-                        <span class="metric-lbl">Alumni & Mentor</span>
+                        <span class="metric-val text-green">Engineer</span>
+                        <span class="metric-lbl">Aerospace and Software</span>
                     </div>
                     <div class="metric">
-                        <span class="metric-val text-blue">UWC</span>
-                        <span class="metric-lbl">Application Reviewer</span>
+                        <span class="metric-val text-blue">YYAS</span>
+                        <span class="metric-lbl">Leadership and Mentorship</span>
                     </div>
                     <div class="metric">
                         <span class="metric-val text-blue">GCP</span>
-                        <span class="metric-lbl">Cloud Certified</span>
+                        <span class="metric-lbl">Google Cloud Certified</span>
                     </div>
                 </div>
             </div>
         </section>
-
+                <!--Projects section-->
         <section id="projects" class="hud-section">
             <div class="section-header hidden-scroll">
                 <span class="tech-tag">DATABLOCK // 02</span>
@@ -140,7 +160,7 @@
                     <div class="col-arrow">↗</div>
                 </a>
 
-                <a href="pages/CAD.html" class="ledger-row hidden-scroll">
+                <a href="../pages/CAD.html" class="ledger-row hidden-scroll">
                     <div class="col-id">SYS.04</div>
                     <div class="col-name">CAD & Avionics PCB <span class="badge badge-green">Hardware</span></div>
                     <div class="col-desc">Developed 3D CAD models and a custom PCB layout bridging mechanical design with onboard avionics.</div>
@@ -149,6 +169,7 @@
             </div>
         </section>
 
+                        <!--Contact section-->
         <section id="contact" class="hud-section">
             <div class="section-header hidden-scroll">
                 <span class="tech-tag">DATABLOCK // 03</span>

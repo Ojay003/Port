@@ -449,12 +449,11 @@ html, body {
   letter-spacing: 1px;
 }
 
-/* Peripheral positions — use translate to center them at their anchor point,
-   combined with scale for the power-on animation */
+/* Peripheral positions */
 .peripheral-portfolio {
   top: 14%;
   left: 50%;
-  translate: -50% 0;
+  translate: -50% -80%;
 }
 
 .peripheral-github {

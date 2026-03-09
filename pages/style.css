@@ -1,0 +1,218 @@
+/* 1. Telemetry Grid Background (Light Mode) */
+body:has(.project-hero) {
+    background-color: #ffffff !important;
+    color: #0f172a;
+    background-image: 
+        linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(59, 130, 246, 0.25) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.25) 1px, transparent 1px) !important;
+    background-size: 30px 30px, 30px 30px, 150px 150px, 150px 150px !important;
+    background-attachment: fixed !important;
+}
+
+/* Override Sirin Stencil with Mission Control fonts */
+.project-hero, .project-details {
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* Hero Section */
+.project-hero {
+    padding: 180px 10% 4rem 10%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    min-height: 60vh;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.project-hero-content { flex: 1.2; }
+
+/* HUD "Back" Button */
+.back-link {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    color: #2563eb; /* Primary Oscilloscope Blue */
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #2563eb;
+    border-radius: 2px; /* Sharp technical corners */
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+}
+
+.project-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Tech Data Tags */
+.meta-tag {
+    font-family: 'JetBrains Mono', monospace;
+    background: transparent;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-subtitle {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #475569;
+    max-width: 600px;
+}
+
+.project-hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Schematic Image Framing */
+.project-main-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 2px;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* ==========================================
+   DETAILS GRID (Mission Control Layout)
+   ========================================== */
+.project-details {
+    padding: 6rem 10% 8rem 10%;
+}
+
+.details-grid {
+    display: flex;
+    gap: 4rem;
+    background: #ffffff;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 2px;
+    padding: 4rem;
+    /* Hard technical shadow instead of soft blur */
+    box-shadow: 12px 12px 0px rgba(59, 130, 246, 0.05); 
+}
+
+.details-text { flex: 1.5; }
+
+/* Status Headers */
+.details-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Blinking Status Dot before Headers */
+.details-text h2::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #2563eb;
+    box-shadow: 0 0 8px #2563eb;
+}
+
+.details-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    color: #475569;
+}
+
+/* Engineering List Log */
+.project-bullets {
+    list-style: none;
+    padding: 0;
+    border-left: 1px dashed rgba(59, 130, 246, 0.4); /* HUD tracking line */
+}
+
+.project-bullets li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #475569;
+}
+
+.project-bullets li strong {
+    font-family: 'JetBrains Mono', monospace;
+    color: #2563eb;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tech Dash bullet points */
+.project-bullets li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.details-visuals {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.secondary-img {
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 0.5rem; /* Creates a schematic framing effect */
+    background: rgba(59, 130, 246, 0.02);
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 968px) {
+    .project-hero {
+        flex-direction: column;
+        text-align: left;
+        padding-top: 140px;
+        gap: 2rem;
+    }
+    
+    .project-title { font-size: 2.5rem; }
+    .details-grid { flex-direction: column; gap: 3rem; padding: 2rem; box-shadow: none; }
+    .project-details { padding: 4rem 5%; }
+}
+
