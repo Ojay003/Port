@@ -1,12 +1,12 @@
 /* 1. Telemetry Grid Background (Light Mode) */
 body:has(.project-hero) {
-    background-color: #ffffff !important;
-    color: #0f172a;
+    background-color: #faf7f7 !important;
+    color: #133c9c;
     background-image: 
         linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
         linear-gradient(rgba(59, 130, 246, 0.25) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(59, 130, 246, 0.25) 1px, transparent 1px) !important;
+        linear-gradient(90deg, rgba(81, 129, 207, 0.76) 1px, transparent 1px) !important;
     background-size: 30px 30px, 30px 30px, 150px 150px, 150px 150px !important;
     background-attachment: fixed !important;
 }
@@ -43,6 +43,60 @@ body:has(.project-hero) {
     border: 1px solid #2563eb;
     border-radius: 2px; /* Sharp technical corners */
     transition: all 0.3s ease;
+}
+.logo {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--text-main);
+}
+nav {
+    display: flex;
+    align-items: center;            
+    justify-content: space-between; 
+    position: relative;
+    width: 100%;
+}
+
+.nav-logo {
+    max-height: 50px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+.footer-logo {
+    max-height: 50px;
+    width: auto;
+    margin-bottom: 1rem;
+    filter: grayscale(100%) brightness(90%);
+}
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+.footer-links a {
+    color: #382426;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--c-lime); 
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #6b7280;
 }
 
 .back-link:hover {

@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ==========================================
-       3. BACKGROUND WAVES (Neon Green Radar)
+       3. BACKGROUND WAVES
        ========================================== */
     const bgCanvas = document.getElementById('bg-sine-waves');
     
@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
             params.grainAlpha = lerp(params.grainAlpha, target.grainAlpha, 0.02);
 
             pCtx.beginPath();
-            pCtx.strokeStyle = '#3b82f6'; // Keeping the preloader wave oscilloscope blue
+            pCtx.strokeStyle = '#3b82f6'; 
             pCtx.lineWidth = params.noiseLevel < 5 ? 3 : 2; 
             pCtx.shadowBlur = params.noiseLevel < 5 ? 10 : 0;
             pCtx.shadowColor = '#3b82f6';
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
             preloader.classList.add('fade-out');
             setTimeout(() => {
                 preloader.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Unlock scroll
+                document.body.style.overflow = 'auto';
             }, 600);
         }
 
@@ -270,17 +270,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Sequence
         textTimeout = setTimeout(() => {
-            typeText("SCANNING BAND...", () => {
+            typeText("scanning bandwidth.....", () => {
                 isScanning = false;
                 if (dialIndicator) dialIndicator.style.left = "50%"; 
                 if (signalBars) signalBars.classList.add('active'); 
                 
                 target.amplitude = 40; target.frequency = 0.02; target.noiseLevel = 12; target.speed = 0.1;
                 
-                typeText("CARRIER DETECTED", () => {
+                typeText("Carrier frequency detected......", () => {
                     target.amplitude = 100; target.frequency = 0.012; target.noiseLevel = 0; target.speed = 0.04; target.grainAlpha = 0; 
                     
-                    typeText("RECONSTRUCTING UI...", () => {
+                    typeText("Reconstructing telemetry and directing traffic.....", () => {
                         endPreloader();
                     });
                 });

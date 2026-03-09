@@ -1,8 +1,7 @@
 /* ==========================================
-   1. CSS VARIABLES (Mission Control UI)
+   1. CSS VARIABLES
    ========================================== */
 :root {
-    /* Deep Radar / Telemetry Palette */
     --bg-main: #03050a;             /* Deeper than deep black */
     --grid-line: rgba(59, 130, 246, 0.1); /* Faint oscilloscope grid */
     --grid-line-thick: rgba(59, 130, 246, 0.25); 
@@ -67,10 +66,10 @@ a { text-decoration: none; color: inherit; }
     transition: opacity 0.6s ease-out, visibility 0.6s;
 }
 #radio-preloader.fade-out { opacity: 0; visibility: hidden; }
-#waveCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+#waveCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 60%; z-index: 1; }
 .preloader-ui { position: relative; z-index: 2; padding: 2rem 5%; width: 100%; max-width: 800px; margin: 0 auto 5vh auto; display: flex; flex-direction: column; gap: 2rem; }
 .status-container { display: flex; justify-content: center; align-items: flex-end; gap: 15px; height: 30px; }
-.status-text { font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; text-shadow: 0 0 8px rgba(59, 130, 246, 0.6); }
+.status-text { font-size: 1.1rem; letter-spacing: 3px; text-shadow: 0 0 8px rgba(59, 130, 246, 0.6); }
 .cursor { display: inline-block; width: 10px; height: 1.1rem; background-color: var(--accent-blue); animation: blink 1s step-end infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
@@ -124,7 +123,7 @@ a { text-decoration: none; color: inherit; }
 .bio-text p { font-size: 1.15rem; margin-bottom: 2.5rem; color: var(--text-muted); line-height: 1.8; max-width: 650px; }
 
 .btn-primary, .btn-outline {
-    display: inline-block; padding: 0.8rem 2.2rem; border-radius: 2px; 
+    display: inline-block; padding: 0.8rem 2.2rem; border-radius: 40px; 
     font-weight: 600; font-size: 0.85rem; letter-spacing: 2px; transition: all 0.3s ease; font-family: var(--font-mono); text-transform: uppercase;
 }
 .btn-primary { background-color: rgba(59, 130, 246, 0.1); color: var(--accent-blue); border: 1px solid var(--accent-blue); }
@@ -178,11 +177,11 @@ a { text-decoration: none; color: inherit; }
 .hidden-scroll { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
 .show-scroll { opacity: 1; transform: translateY(0); }
 
-/* Responsive */
 /* ==========================================
    MOBILE RESPONSIVENESS (Mission Control Fix)
    ========================================== */
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 768px) { /* Adjusted breakpoint to standard mobile size */
+    
     /* 1. Mobile Navigation Fixes */
     .nav-links {
         position: fixed; right: -100%; top: 0; height: 100vh; width: 100%; 
@@ -196,9 +195,9 @@ a { text-decoration: none; color: inherit; }
     .toggle .line2 { opacity: 0; }
     .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
     
-    /* 2. Fix the Squished Hero Section */
+    /* 2. Fix the Hero Section */
     .hud-hero {
-        padding-top: 140px; /* Give the header room to breathe */
+        padding-top: 120px; 
     }
     
     .hero-content { 
@@ -210,12 +209,11 @@ a { text-decoration: none; color: inherit; }
 
     .hero-text-column {
         width: 100%;
-        max-width: 100%; /* Stops the text from being squished */
+        max-width: 100%; 
     }
     
-    /* 3. Force Video to the Top on Mobile */
     .hero-visual-column { 
-        order: -1; /* This pushes the video above the text */
+        order: -1; /* Pushes video to the top */
         width: 100%;
         display: flex;
         justify-content: center;
@@ -224,17 +222,17 @@ a { text-decoration: none; color: inherit; }
 
     .hud-video-wrapper {
         width: 100%;
-        max-width: 320px; /* Keeps the video perfectly sized for phones */
+        max-width: 320px; 
     }
 
-    /* 4. Scale Down Typography */
+    /* 3. Scale Down Typography */
     .hud-hero h1 { 
-        font-size: 3.2rem; 
-        word-wrap: break-word; /* Prevents long text from breaking the screen */
+        font-size: 3rem; 
+        word-wrap: break-word; 
     }
     
     .hud-hero h2 { 
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         border-left: none; 
         border-bottom: 2px solid var(--accent-blue); 
         padding-left: 0; 
@@ -242,7 +240,7 @@ a { text-decoration: none; color: inherit; }
         display: inline-block; 
     }
 
-    /* 5. Stack the Buttons */
+    /* 4. Stack the Buttons */
     .hero-actions {
         display: flex;
         flex-direction: column;
@@ -253,23 +251,30 @@ a { text-decoration: none; color: inherit; }
     .btn-primary, .btn-outline {
         width: 100%;
         text-align: center;
-        margin-left: 0; /* Removes the desktop spacing */
+        margin-left: 0; 
     }
     
-    /* 6. Fix About Section Portrait */
+    /* 5. FIX ABOUT SECTION STACKING */
     .about-grid { 
-        grid-template-columns: 1fr; 
-        text-align: left; 
-        gap: 2.5rem; 
+        /* Switch from grid to flex to guarantee perfect vertical stacking */
+        display: flex; 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 2rem; 
     }
     
     .profile-wrapper { 
+        order: -1; /* Guarantees the portrait sits above the text */
         width: 160px; 
         height: 160px; 
-        margin: 0 auto; /* Centers the portrait */
+        margin: 0 auto; 
+    }
+
+    .metrics-box {
+        width: 100%; /* Ensures the stats box fills the screen nicely */
     }
     
-    /* 7. Fix the Ledgers */
+    /* 6. Fix the Ledgers */
     .ledger-row, .contact-row { 
         flex-direction: column; 
         align-items: flex-start; 
@@ -285,7 +290,6 @@ a { text-decoration: none; color: inherit; }
         text-align: left; 
     }
 }
-
 /* ==========================================
    ORGANIC HUD ELEMENTS (Video & Portrait)
    ========================================== */
