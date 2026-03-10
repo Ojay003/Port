@@ -152,7 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================== */
     const preloader = document.getElementById('radio-preloader');
     if (preloader) {
-        document.body.style.overflow = 'hidden'; // Lock scroll
+        document.body.classList.add('lock-scroll');
+        preloader.addEventListener('touchmove', (e)=> {
+            e.preventDefault();
+        },{passive: false});
 
         const pCanvas = document.getElementById('waveCanvas');
         const pCtx = pCanvas.getContext('2d');
@@ -261,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
             preloader.classList.add('fade-out');
             setTimeout(() => {
                 preloader.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                document.body.classList.remove('lock-scroll');
             }, 600);
         }
 
