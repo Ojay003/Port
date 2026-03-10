@@ -36,7 +36,7 @@ a { text-decoration: none; color: inherit; }
 .telemetry-grid {
     position: fixed;
     top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    width: 100%; height: 100vh;
     z-index: -2;
     background-image: 
         linear-gradient(var(--grid-line) 1px, transparent 1px),
@@ -48,7 +48,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Make sure the JS Canvas sits behind the content */
 #bg-sine-waves {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; pointer-events: none;
 }
 
 /* Text Colors */
@@ -59,7 +59,7 @@ a { text-decoration: none; color: inherit; }
    3. RADIO PRELOADER
    ========================================== */
 #radio-preloader {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
     background-color: var(--bg-main); z-index: 9999;
     display: flex; flex-direction: column; justify-content: flex-end;
     font-family: var(--font-mono); color: var(--accent-blue);
@@ -94,7 +94,7 @@ a { text-decoration: none; color: inherit; }
 .lock-scroll {
     overflow: hidden !important;
     height: 100vh !important;
-    width: 100vw !important;
+    width: 100% !important;
     touch-action: none !important;
 }
 
@@ -190,6 +190,19 @@ a { text-decoration: none; color: inherit; }
 @media screen and (max-width: 768px) { /* Adjusted breakpoint to standard mobile size */
     
     /* 1. Mobile Navigation Fixes */
+    .hud-nav {
+        padding: 1rem 5%;
+    }
+    
+    .hud-section {
+        padding: 4rem 5%;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
     .nav-links {
         position: fixed; right: -100%; top: 0; height: 100vh; width: 100%; 
         background: var(--bg-main);
@@ -204,7 +217,7 @@ a { text-decoration: none; color: inherit; }
     
     /* 2. Fix the Hero Section */
     .hud-hero {
-        padding-top: 120px; 
+        padding: 120px 5% 4rem 5%; 
     }
     
     .hero-content { 
@@ -234,7 +247,7 @@ a { text-decoration: none; color: inherit; }
 
     /* 3. Scale Down Typography */
     .hud-hero h1 { 
-        font-size: 3rem; 
+        font-size: 2.5rem; 
         word-wrap: break-word; 
     }
     
@@ -293,6 +306,10 @@ a { text-decoration: none; color: inherit; }
         width: 100%; 
     }
     
+    .col-desc {
+        padding-right: 0;
+    }
+
     .col-arrow { 
         text-align: left; 
     }
@@ -392,7 +409,7 @@ a { text-decoration: none; color: inherit; }
 .skills-grid {
     display: grid;
     /* Creates a responsive 2-column layout that naturally stacks on mobile */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
